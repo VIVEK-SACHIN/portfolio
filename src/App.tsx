@@ -3,7 +3,8 @@ import './components/Header.css'
 import Header from './components/Header';
 import NameAndDescription from './components/NameAndDescription';
 import { loremIpsum } from 'lorem-ipsum';
-import Expertise from './components/Expertise/Expertise';
+import { Expertise } from './components/Expertise/Expertise';
+import Projects from './components/Projects/Projects';
 
 function App() {
   const links = {
@@ -24,9 +25,10 @@ function App() {
          description={loremIpsum({ count: 20, units: 'words' })}
         />
         <Expertise />
+        <Projects />
       </div>
     </>
   )
 }
 
-export default App
+export default App;
