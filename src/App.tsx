@@ -5,6 +5,8 @@ import NameAndDescription from './components/NameAndDescription/NameAndDescripti
 import { loremIpsum } from 'lorem-ipsum';
 import { Expertise } from './components/Expertise/Expertise';
 import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact';
+import Footer from './components/footer/Footer';
 
 function App() {
   const links = {
@@ -15,17 +17,19 @@ function App() {
 
   return (
     <>
-      <Header 
+      <Header
         name="Vivek"
         links={links}
       />
       <div style={{ overflow: 'auto' }}>
-        <NameAndDescription 
-         name="Vivek"
-         description={loremIpsum({ count: 20, units: 'words' })}
+        <NameAndDescription
+          name="Vivek"
+          description={loremIpsum({ count: 20, units: 'words' })}
         />
         <Expertise />
         <Projects />
+        <Contact />
+        <Footer />
       </div>
     </>
   )
