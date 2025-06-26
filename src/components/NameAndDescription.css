@@ -1,17 +1,16 @@
 .name-and-description {
-    background-image: url('src/assets/touse.png');
+    background-image: url('src/assets/Screenshot from 2025-06-25 23-22-48.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    min-height: 100vh;
+    height: calc(100vh - var(--header-height, 60px));
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-
-    /* gap: 0.3rem; */
+    margin-top: var(--header-height, 60px);
 }
 
 .name-and-description::before {
