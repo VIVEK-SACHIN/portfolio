@@ -7,6 +7,7 @@ import { Expertise } from './components/Expertise/Expertise';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import Footer from './components/footer/Footer';
+import ExperienceSection from './components/Experience/ExperienceSection';
 
 function App() {
   const links = {
@@ -28,6 +29,7 @@ function App() {
         />
         <Expertise />
         <Projects />
+        <ExperienceSection />
         <Contact />
         <Footer />
       </div>
