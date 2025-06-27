@@ -7,7 +7,7 @@ export const NameAndDescription = () => {
     <div className="name-and-description">
     <h2 className="developer-title">{nameAndDescriptionData.title}</h2>
     <span className="Hello">Hey, I'm <span className="gradientTxt">{nameAndDescriptionData.name}</span></span>
-    <p>{nameAndDescriptionData.description}</p>
+    <p>{nameAndDescriptionData.summary}</p>
     <div className="buttons-container">
       <button className="action-button github-button">
         <FaGithub size={20} />
