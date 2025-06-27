@@ -1,17 +1,13 @@
-import React from 'react';
+import { type FC } from 'react';
 import styles from './ExperienceItem.module.css';
 import { LucideCalendar } from 'lucide-react';
+import type { TimelineItem } from '../../config/vivek';
 
-interface ExperienceItemProps {
-  item: {
-    title: string;
-    company: string;
-    period: string;
-    responsibilities: string[];
-  };
+export interface ExperienceItemProps {
+  item: TimelineItem;
 }
 
-const ExperienceItem: React.FC<ExperienceItemProps> = ({ item }) => {
+export const ExperienceItem: FC<ExperienceItemProps> = ({ item }) => {
   return (
     <div className={styles.itemContainer}>
       <div className={styles.itemContent}>
@@ -33,5 +29,3 @@ const ExperienceItem: React.FC<ExperienceItemProps> = ({ item }) => {
     </div>
   );
 };
-
-export default ExperienceItem;

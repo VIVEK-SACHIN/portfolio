@@ -1,14 +1,19 @@
-import React from 'react';
+import { type FC, useState, useEffect, useRef } from 'react';
 import styles from './Experience.module.css';
-import ExperienceItem from './ExperienceItem';
+import { ExperienceItem } from './ExperienceItem';
 import { LucideBriefcase, LucideGraduationCap } from 'lucide-react';
-import type { ExperienceProps } from './types';
+import { experienceData, educationData } from '../../config/vivek';
 
-const Experience: React.FC<ExperienceProps> = ({ activeTab, onTabChange, items }) => {
-  const [isVisible, setIsVisible] = React.useState(false);
-  const containerRef = React.useRef<HTMLDivElement>(null);
+interface ExperienceProps {
+  activeTab: 'experience' | 'education';
+  onTabChange: (tab: 'experience' | 'education') => void;
+}
 
-  React.useEffect(() => {
+const Experience: FC<ExperienceProps> = ({ activeTab, onTabChange }) => {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -59,16 +64,17 @@ const Experience: React.FC<ExperienceProps> = ({ activeTab, onTabChange, items }
       <div className={styles.content}>
         {activeTab === 'experience' && (
           <div className={styles.experienceList}>
-            {items.map((item) => (
+            {experienceData.map((item) => (
               <ExperienceItem key={item.id} item={item} />
             ))}
           </div>
         )}
         
         {activeTab === 'education' && (
-          <div className={styles.educationContent}>
-            {/* Education content would go here */}
-            <p className={styles.comingSoon}>Education details coming soon</p>
+          <div className={styles.experienceList}>
+            {educationData.map((item) => (
+              <ExperienceItem key={item.id} item={item} />
+            ))}
           </div>
         )}
       </div>
