@@ -1,37 +1,29 @@
 import React from 'react';
 import { CodeXml, Server, Database, Terminal, Braces, Cpu } from 'lucide-react';
 import { ExpertiseCard } from './ExpertiseCard';
+import { expertiseData, additionalTech, type ExpertiseItem } from '../../config/vivek';
 import './Expertise.css';
 
-const expertiseData = [
-  {
-    title: 'Frontend Development',
-    description: 'Crafting responsive and intuitive user interfaces with modern frameworks',
-    icon: <CodeXml className="w-6 h-6" />,
-    tags: ['React', 'Next.js', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Redux'],
-    gradient: 'linear-gradient(135deg, #4ECDC4 0%, #556270 100%)',
-  },
-  {
-    title: 'Backend Development',
-    description: 'Building scalable and robust server-side applications',
-    icon: <Server className="w-6 h-6" />,
-    tags: ['Node.js', 'Express', 'REST APIs', 'GraphQL'],
-    gradient: 'linear-gradient(135deg, #FF6B6B 0%, #556270 100%)',
-  },
-  {
-    title: 'Database Management',
-    description: 'Designing and optimizing database architectures',
-    icon: <Database className="w-6 h-6" />,
-    tags: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'Firebase'],
-    gradient: 'linear-gradient(135deg, #6C5CE7 0%, #556270 100%)',
-  },
-];
+// Map of icon names to their components
+const iconComponents: Record<string, React.ComponentType<{ className?: string }>> = {
+  CodeXml,
+  Server,
+  Database,
+  Terminal,
+  Braces,
+  Cpu
+};
 
-const additionalTech = [
-  { icon: <Terminal className="w-4 h-4" />, text: 'Git & CI/CD' },
-  { icon: <Braces className="w-4 h-4" />, text: 'Jest & Testing' },
-  { icon: <Cpu className="w-4 h-4" />, text: 'Docker' },
-];
+const DynamicIcon = ({ name, className = '' }: { name: string; className?: string }) => {
+  const IconComponent = iconComponents[name];
+  
+  if (!IconComponent) {
+    console.error(`Icon '${name}' not found`);
+    return null;
+  }
+  
+  return <IconComponent className={className} />;
+};
 
 export const Expertise: React.FC = () => {
   return (
@@ -47,27 +39,30 @@ export const Expertise: React.FC = () => {
         </div>
 
         <div className="expertise-grid">
-          {expertiseData.map((item, index) => (
-            <ExpertiseCard
-              key={index}
-              title={item.title}
-              description={item.description}
-              icon={item.icon}
-              tags={item.tags}
-              gradient={item.gradient}
-              animationDelay={index * 200}
-            />
-          ))}
+          {expertiseData.map((item: ExpertiseItem, _index: number) => {
+            const icon = <DynamicIcon name={item.icon} className={item.iconClassName} />;
+            return (
+              <ExpertiseCard
+                key={`${item.title}-${_index}`}
+                title={item.title}
+                description={item.description}
+                icon={icon}
+                tags={item.tags}
+                gradient={item.gradient}
+                animationDelay={_index * 100}
+              />
+            );
+          })}
         </div>
 
         <div className="additional-tech">
           <h3 className="additional-tech-title">Additional Technologies</h3>
           <div className="tech-tags-container">
             {additionalTech.map((tech, index) => (
-              <div key={index} className="tech-tag">
-                {tech.icon}
+              <div className="tech-tag" key={tech.text}>
+                <DynamicIcon name={tech.icon} />
                 <span>{tech.text}</span>
-              </div>
+              </div>           
             ))}
           </div>
         </div>
