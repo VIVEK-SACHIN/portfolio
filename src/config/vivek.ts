@@ -1,3 +1,4 @@
+
 export interface TimelineItem {
   id: string;
   title: string;
@@ -65,4 +66,102 @@ export const educationData: TimelineItem[] = [
       'Participated in various technical competitions'
     ]
   }
+];
+
+
+export interface Project {
+  title: string;
+  description: string;
+  imageUrl: string;
+  tags: string[];
+  githubUrl: string;
+  status: 'In Progress' | 'Completed' | 'On Hold' | 'Planned';
+  demoUrl?: string; // Optional field for future use
+}
+
+export const projectsData: Project[] = [
+  {
+    title: 'SHOWZY',
+    description: 'A ticket-booking web app built using Next.js, Tailwind CSS, and the MERN stack with PostgreSQL. It allows users to book tickets for IPL matches and concerts, ensuring a seamless booking experience.',
+    imageUrl: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&q=80&w=1000',
+    tags: ['Next.js', 'Tailwind CSS', 'React', 'Node.js', 'PostgreSQL', 'Express', 'RabbitMQ', 'Redis'],
+    githubUrl: 'https://github.com/Aditya-system32',
+    status: 'In Progress'
+  },
+  {
+    title: 'DUBBLY',
+    description: 'Dubbly is a web app that automatically generates highly accurate subtitles and voice dubbing for videos in multiple languages using AI.',
+    imageUrl: 'https://raw.githubusercontent.com/Aditya-system32/amazon-clone/refs/heads/master/public/Dubbly%20web%20ss.png',
+    tags: ['Next.js', 'AssemblyAI', 'Tailwind CSS', 'React', 'Node.js', 'PostgreSQL', 'Express'],
+    githubUrl: 'https://github.com/Aditya-system32',
+    status: 'In Progress'
+  },
+  {
+    title: 'Ad-Rebate',
+    description: 'A mobile application that provides incentives such as rewards, coupons, and gifts in return for engaging with local advertisements.',
+    imageUrl: 'https://raw.githubusercontent.com/Aditya-system32/Ad-Rebate/refs/heads/master/assets/images/logoBlack.png',
+    tags: ['React', 'React-Native', 'Firebase', 'Framer', 'Redux'],
+    githubUrl: 'https://github.com/Aditya-system32/Ad-Rebate',
+    status: 'Completed'
+  },
+];
+
+export interface NameAndDescription {
+  name: string;
+  description: string;
+  title: string;
+}
+
+export const nameAndDescriptionData: NameAndDescription = {
+  name: 'Vivek Kumar',
+  description: 'geniusfdsfsfdsdf asdasdaksdjls jlj lkj lskcjalskdlkaskcmla aLsdsa dslas djlaskjdlkajd lassdj lasdj lkasksjdlkasdj lasad asdj laskdj lasdj lkassdj laskdj lakd jasld asd jaLSKsj LKd jlasksdj lasdj lasdj lasksdj aslasdj lSD JLKSD jlJ L',
+  title: 'FULL STACK DEVELOPER',
+};
+
+export interface TechItem {
+  icon: string; // Icon name from lucide-react
+  text: string;
+  className?: string;
+}
+
+export interface ExpertiseItem {
+  title: string;
+  description: string;
+  icon: string; // Icon name from lucide-react
+  tags: string[];
+  gradient: string;
+  iconClassName?: string;
+}
+
+export const expertiseData: ExpertiseItem[] = [
+  {
+    title: 'Frontend Development',
+    description: 'Crafting responsive and intuitive user interfaces with modern frameworks',
+    icon: 'CodeXml',
+    tags: ['React', 'Next.js', 'JavaScript', 'TypeScript', 'Tailwind CSS', 'Redux'],
+    gradient: 'linear-gradient(135deg, #4ECDC4 0%, #556270 100%)',
+    iconClassName: 'w-6 h-6'
+  },
+  {
+    title: 'Backend Development',
+    description: 'Building scalable and robust server-side applications',
+    icon: 'Server',
+    tags: ['Node.js', 'Express', 'REST APIs', 'GraphQL'],
+    gradient: 'linear-gradient(135deg, #FF6B6B 0%, #556270 100%)',
+    iconClassName: 'w-6 h-6'
+  },
+  {
+    title: 'Database Management',
+    description: 'Designing and optimizing database architectures',
+    icon: 'Database',
+    tags: ['PostgreSQL', 'MongoDB', 'Redis', 'MySQL', 'Firebase'],
+    gradient: 'linear-gradient(135deg, #6C5CE7 0%, #556270 100%)',
+    iconClassName: 'w-6 h-6'
+  },
+];
+
+export const additionalTech: TechItem[] = [
+  { icon: 'Terminal', text: 'Git & CI/CD', className: 'w-4 h-4' },
+  { icon: 'Braces', text: 'Jest & Testing', className: 'w-4 h-4' },
+  { icon: 'Cpu', text: 'Docker', className: 'w-4 h-4' },
 ];

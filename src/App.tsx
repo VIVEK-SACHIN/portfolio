@@ -23,10 +23,7 @@ function App() {
         links={links}
       />
       <div style={{ overflow: 'auto' }}>
-        <NameAndDescription
-          name="Vivek"
-          description={loremIpsum({ count: 20, units: 'words' })}
-        />
+        <NameAndDescription/>
         <Expertise />
         <Projects />
         <ExperienceSection />

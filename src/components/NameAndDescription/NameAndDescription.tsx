@@ -1,20 +1,13 @@
-import React from 'react';
 import './NameAndDescription.css';
 import { FaGithub, FaDownload } from 'react-icons/fa';
-interface NameAndDescriptionProps {
-  name?: string;
-  description?: string;
-}
+import { nameAndDescriptionData } from '../../config/vivek';
 
-export const NameAndDescription: React.FC<NameAndDescriptionProps> = ({
-  name="Vivek",
-  description="genius",
-}) => {
+export const NameAndDescription = () => {
   return (
     <div className="name-and-description">
-    <h2 className="developer-title">KING OF BASKETBALL</h2>
-    <span className="Hello">Hey, I'm <span className="gradientTxt">{name}</span></span>
-    <p>{description}</p>
+    <h2 className="developer-title">{nameAndDescriptionData.title}</h2>
+    <span className="Hello">Hey, I'm <span className="gradientTxt">{nameAndDescriptionData.name}</span></span>
+    <p>{nameAndDescriptionData.description}</p>
     <div className="buttons-container">
       <button className="action-button github-button">
         <FaGithub size={20} />
