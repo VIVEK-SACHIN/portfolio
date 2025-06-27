@@ -108,13 +108,13 @@ export const projectsData: Project[] = [
 
 export interface NameAndDescription {
   name: string;
-  description: string;
+  summary: string;
   title: string;
 }
 
 export const nameAndDescriptionData: NameAndDescription = {
   name: 'Vivek Kumar',
-  description: 'geniusfdsfsfdsdf asdasdaksdjls jlj lkj lskcjalskdlkaskcmla aLsdsa dslas djlaskjdlkajd lassdj lasdj lkasksjdlkasdj lasad asdj laskdj lasdj lkassdj laskdj lakd jasld asd jaLSKsj LKd jlasksdj lasdj lasdj lasksdj aslasdj lSD JLKSD jlJ L',
+  summary: 'geniusfdsfsfdsdf asdasdaksdjls jlj lkj lskcjalskdlkaskcmla aLsdsa dslas djlaskjdlkajd lassdj lasdj lkasksjdlkasdj lasad asdj laskdj lasdj lkassdj laskdj lakd jasld asd jaLSKsj LKd jlasksdj lasdj lasdj lasksdj aslasdj lSD JLKSD jlJ L',
   title: 'FULL STACK DEVELOPER',
 };
 
