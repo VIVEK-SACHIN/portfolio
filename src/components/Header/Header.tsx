@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { nameAndDescriptionData } from '../../config/vivek';
+import './Header.css';
 
 interface HeaderProps {
   name: string;
@@ -10,10 +12,27 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ name, links }) => {
+  const [nameInitials, setNameInitials] = useState('');
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+
+  useEffect(() => {
+    const getNameInitials = nameAndDescriptionData.name.split(' ')[0].split('')[0] + nameAndDescriptionData.name.split(' ')[1].split('')[0];
+    setNameInitials(getNameInitials);
+
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 700);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <header className="header">
       <div className="header-content">
-        <span className="header-name">{name}</span>
+        <span className="header-name">
+          {isMobile ? nameInitials : nameAndDescriptionData.name}
+        </span>
         <nav className="header-nav">
           <a href={links.about}>About</a>
           <a href={links.projects}>Projects</a>

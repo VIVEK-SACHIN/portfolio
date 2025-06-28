@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './Footer.module.css';
 import { nameAndDescriptionData } from '../../config/vivek';
 
 const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
-
+  const [firstName, setFirstName] = useState('');
+  useEffect(() => {
+      const getFirstName = nameAndDescriptionData.name.split(' ')[0];
+      setFirstName(getFirstName);
+    }, [nameAndDescriptionData.name]);
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <p className={styles.text}>
-          © {currentYear} {nameAndDescriptionData.name}. Crafted with passion and code.
+          © {currentYear} {firstName}. Crafted with passion and code.
         </p>
       </div>
     </footer>

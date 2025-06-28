@@ -8,7 +8,6 @@ export const NameAndDescription = () => {
 useEffect(() => {
     const getFirstName = nameAndDescriptionData.name.split(' ')[0];
     setFirstName(getFirstName);
-    console.log(getFirstName);
   }, [nameAndDescriptionData.name]);
   return (
     <div className="name-and-description">
@@ -16,16 +15,23 @@ useEffect(() => {
     <span className="Hello">Hey, I'm <span className="gradientTxt">{firstName}</span></span>
     <p>{nameAndDescriptionData.summary}</p>
     <div className="buttons-container">
-      <button className="action-button github-button">
+      <a 
+        href={nameAndDescriptionData.githubUrl} 
+        className="action-button github-button"
+        target="_blank"
+        rel="noopener noreferrer"
+        style={{ textDecoration: 'none' }}
+      >
         <FaGithub size={20} />
         <span>GitHub Profile</span>
-      </button>
+      </a>
       <a 
         href={nameAndDescriptionData.cvUrl} 
         className="action-button download-button"
         target="_blank"
         rel="noopener noreferrer"
         download
+        style={{ textDecoration: 'none' }}
       >
         <FaDownload size={20} />
         <span>Download CV</span>

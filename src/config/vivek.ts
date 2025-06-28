@@ -82,14 +82,7 @@ export const projectsData: Project[] = [
 
 export const nameAndDescriptionData: NameAndDescription = {
   name: 'Vivek Kumar',
-  summary: `MERN Stack Developer | 2+ Years Experience
-Experienced MERN stack developer specializing in building scalable web applications using MongoDB, Express.js, React,
-and Node.js. Expertise includes designing high-performance RESTful APIs, optimizing MongoDB queries, and
-implementing secure authentication systems. Successfully resolved complex WebRTC scaling challenges, doubling
-participant capacity from 150 to 300+ while reducing latency by 30%. Proficient in Docker for containerization . Skilled in
-serverless architectures with AWS Lambda and strong foundational knowledge in system design, performance
-optimization, and core computer science principles including Computer Networks, Operating Systems, DBMS, and Data
-Structures & Algorithms. Committed to writing clean, maintainable code and solving complex engineering problems.`,
+  summary: `I craft exceptional digital experiences through elegant code and innovative solutions`,
   title: 'FULL STACK DEVELOPER',
   githubUrl: 'https://github.com/VIVEK-SACHIN',
   cvUrl: 'https://github.com/VIVEK-SACHIN/PersonalData/blob/main/vivekresume2yrs.pdf',
