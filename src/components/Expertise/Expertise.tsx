@@ -1,8 +1,10 @@
 import React from 'react';
 import { CodeXml, Server, Database, Terminal, Braces, Cpu } from 'lucide-react';
 import { ExpertiseCard } from './ExpertiseCard';
-import { expertiseData, additionalTech, type ExpertiseItem } from '../../config/vivek';
+import { expertiseData, additionalTech} from '../../config/vivek';
+import {type ExpertiseItem } from '../../config/types/config.types';
 import './Expertise.css';
+import { nameAndDescriptionData } from '../../config/vivek';
 
 // Map of icon names to their components
 const iconComponents: Record<string, React.ComponentType<{ className?: string }>> = {
@@ -34,7 +36,7 @@ export const Expertise: React.FC = () => {
             My <span className="text-gradient">Expertise</span>
           </h2>
           <p className="expertise-description">
-            With over 3 years of experience in full-stack development, I've built and scaled applications across various domains. Here's what I bring to the table:
+            {nameAndDescriptionData.MyExpertise}
           </p>
         </div>
 

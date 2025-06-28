@@ -1,44 +1,19 @@
 
-export interface TimelineItem {
-  id: string;
-  title: string;
-  company: string;
-  period: string;
-  responsibilities: string[];
-}
+import type { TimelineItem, Project, NameAndDescription, TechItem, ExpertiseItem } from './types/config.types';
 
 export const experienceData: TimelineItem[] = [
   {
     id: '1',
     title: 'Software Engineer',
-    company: 'Advertt Online Services Pvt. Ltd.',
-    period: '2021-2022',
+    company: 'Instave (Peoplelink) | Sep 2023 – Present | Hi-Tech City, India',
+    period: '2023-present',
     responsibilities: [
-      'Created mobile applications utilizing React Native and Redux for efficient state management',
-      'Increased user engagement by 30% through a rewards-based advertising model.',
-      'Designed and executed a tailored application for a dynamic startup, optimizing operational processes and boosting overall productivity.'
-    ]
-  },
-  {
-    id: '2',
-    title: 'Software Engineer',
-    company: 'Advertt Online Services Pvt. Ltd.',
-    period: '2021-2022',
-    responsibilities: [
-      'Created mobile applications utilizing React Native and Redux for efficient state management',
-      'Increased user engagement by 30% through a rewards-based advertising model.',
-      'Designed and executed a tailored application for a dynamic startup, optimizing operational processes and boosting overall productivity.'
-    ]
-  },
-  {
-    id: '3',
-    title: 'Software Engineer',
-    company: 'Advertt Online Services Pvt. Ltd.',
-    period: '2021-2022',
-    responsibilities: [
-      'Created mobile applications utilizing React Native and Redux for efficient state management',
-      'Increased user engagement by 30% through a rewards-based advertising model.',
-      'Designed and executed a tailored application for a dynamic startup, optimizing operational processes and boosting overall productivity.'
+      'Developed and optimized video conferencing solutions using WebRTC and WebSockets, addressing SFU auto-scaling and participant scaling issues, increasing capacity from 150 to 300+ users while reducing latency by 30%.',
+      'Built a generic video-conferencing SDK to streamline integration across projects.',
+      'Collaborated with UI teams to design and implement modern UI components using JavaScript (ES6+).',
+      'Enhanced system reliability by containerizing services with Docker, improving deployment consistency.',
+      'Contributed to real-time communication features, ensuring low-latency performance for large-scale interactions.',
+      'Built a dynamic SMS and email sending module which can be configured with any kind and type of credentials from any provider.'
     ]
   }
 ];
@@ -47,91 +22,79 @@ export const educationData: TimelineItem[] = [
   {
     id: 'edu1',
     title: 'Bachelor of Technology in Computer Science',
-    company: 'Your University',
-    period: '2017-2021',
+    company: 'GLA University Mathura, India',
+    period: '2020–2024 | 7.3 GPA',
     responsibilities: [
-      'Specialized in Software Development',
-      'Graduated with First Class Honors',
-      'Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems'
+      'Programming Languages: Java, C++, Python',
+      'Major subjects: Operating Systems (OS), Computer Organization and Architecture, Microprocessors and Microcontrollers, Computer Networks',
+      'Relevant Coursework: Data Structures, Algorithms, Web Development, Database Systems,Design and Analysis of Algorithms (DAA)'
     ]
   },
   {
     id: 'edu2',
     title: 'Senior Secondary Education',
-    company: 'Your School',
-    period: '2015-2017',
+    company: 'Army Public School (APS), Yol Cantt',
+    period: '2019–2020',
     responsibilities: [
       'Major in Science with Computer Science',
-      'Scored XX% in final examinations',
+      'Scored 89.2% in final examinations',
       'Participated in various technical competitions'
+    ]
+  },
+  {
+    id: 'edu3',
+    title: 'Higher Secondary Education',
+    company: 'Army Public School (APS), Sukna Cantt',
+    period: '2017–2018',
+    responsibilities: [
+      'general subjects',
+      'Scored 91.6% in final examinations',
     ]
   }
 ];
 
-
-export interface Project {
-  title: string;
-  description: string;
-  imageUrl: string;
-  tags: string[];
-  githubUrl: string;
-  status: 'In Progress' | 'Completed' | 'On Hold' | 'Planned';
-  demoUrl?: string; // Optional field for future use
-}
-
 export const projectsData: Project[] = [
   {
-    title: 'SHOWZY',
-    description: 'A ticket-booking web app built using Next.js, Tailwind CSS, and the MERN stack with PostgreSQL. It allows users to book tickets for IPL matches and concerts, ensuring a seamless booking experience.',
+    title: 'TRAVEL AND TOUR',
+    description: 'Full-stack Travel Management System with secure auth, Razorpay payments, and RESTful APIs.Optimized performance via caching, compression, and secure input handling.Responsive UI with Pug templates, Mapbox integration, and ESLint/Prettier for code quality',
     imageUrl: 'https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&q=80&w=1000',
-    tags: ['Next.js', 'Tailwind CSS', 'React', 'Node.js', 'PostgreSQL', 'Express', 'RabbitMQ', 'Redis'],
-    githubUrl: 'https://github.com/Aditya-system32',
-    status: 'In Progress'
-  },
-  {
-    title: 'DUBBLY',
-    description: 'Dubbly is a web app that automatically generates highly accurate subtitles and voice dubbing for videos in multiple languages using AI.',
-    imageUrl: 'https://raw.githubusercontent.com/Aditya-system32/amazon-clone/refs/heads/master/public/Dubbly%20web%20ss.png',
-    tags: ['Next.js', 'AssemblyAI', 'Tailwind CSS', 'React', 'Node.js', 'PostgreSQL', 'Express'],
-    githubUrl: 'https://github.com/Aditya-system32',
-    status: 'In Progress'
-  },
-  {
-    title: 'Ad-Rebate',
-    description: 'A mobile application that provides incentives such as rewards, coupons, and gifts in return for engaging with local advertisements.',
-    imageUrl: 'https://raw.githubusercontent.com/Aditya-system32/Ad-Rebate/refs/heads/master/assets/images/logoBlack.png',
-    tags: ['React', 'React-Native', 'Firebase', 'Framer', 'Redux'],
-    githubUrl: 'https://github.com/Aditya-system32/Ad-Rebate',
+    tags: ['Next.js', 'Node.js', 'Express.js', 'MongoDB', 'Razorpay', 'Pug', 'Mapbox'],
+    githubUrl: 'https://github.com/VIVEK-SACHIN/TravelAndTour',
     status: 'Completed'
+  },
+  {
+    title: 'UFIRE',
+    description: 'Scalable group chat app with Firebase, Socket.IO, and GetX state management.Responsive UI future upgrades include 1:1 chats and media sharing.',
+    imageUrl: 'https://raw.githubusercontent.com/Aditya-system32/amazon-clone/refs/heads/master/public/Dubbly%20web%20ss.png',
+    tags: ['Flutter', 'Firebase', 'GetX', 'Socket.IO'],
+    githubUrl: 'https://github.com/VIVEK-SACHIN/chat-app',
+    status: 'Completed'
+  },
+  {
+    title: 'Conferencing App',
+    description: 'Peer-to-peer video platform using WebRTC with private IPs for low latency.Minimal UI with semantic HTML5/CSS3; no STUN/TURN server dependency.',
+    imageUrl: 'https://raw.githubusercontent.com/Aditya-system32/Ad-Rebate/refs/heads/master/assets/images/logoBlack.png',
+    tags: ['HTML5', 'CSS3', 'JavaScript (ES6)', 'WebRTC'],
+    githubUrl: 'https://github.com/VIVEK-SACHIN/video-confrencingapp',
+    status: 'In Progress'
   },
 ];
 
-export interface NameAndDescription {
-  name: string;
-  summary: string;
-  title: string;
-}
-
 export const nameAndDescriptionData: NameAndDescription = {
   name: 'Vivek Kumar',
-  summary: 'geniusfdsfsfdsdf asdasdaksdjls jlj lkj lskcjalskdlkaskcmla aLsdsa dslas djlaskjdlkajd lassdj lasdj lkasksjdlkasdj lasad asdj laskdj lasdj lkassdj laskdj lakd jasld asd jaLSKsj LKd jlasksdj lasdj lasdj lasksdj aslasdj lSD JLKSD jlJ L',
+  summary: `MERN Stack Developer | 2+ Years Experience
+Experienced MERN stack developer specializing in building scalable web applications using MongoDB, Express.js, React,
+and Node.js. Expertise includes designing high-performance RESTful APIs, optimizing MongoDB queries, and
+implementing secure authentication systems. Successfully resolved complex WebRTC scaling challenges, doubling
+participant capacity from 150 to 300+ while reducing latency by 30%. Proficient in Docker for containerization . Skilled in
+serverless architectures with AWS Lambda and strong foundational knowledge in system design, performance
+optimization, and core computer science principles including Computer Networks, Operating Systems, DBMS, and Data
+Structures & Algorithms. Committed to writing clean, maintainable code and solving complex engineering problems.`,
   title: 'FULL STACK DEVELOPER',
+  githubUrl: 'https://github.com/VIVEK-SACHIN',
+  cvUrl: 'https://github.com/VIVEK-SACHIN/PersonalData/blob/main/vivekresume2yrs.pdf',
+  MyExpertise: `With over 2 years of experience in full-stack development, I've built and scaled applications across various domains. Here's what I bring to the table:`,
 };
-
-export interface TechItem {
-  icon: string; // Icon name from lucide-react
-  text: string;
-  className?: string;
-}
-
-export interface ExpertiseItem {
-  title: string;
-  description: string;
-  icon: string; // Icon name from lucide-react
-  tags: string[];
-  gradient: string;
-  iconClassName?: string;
-}
 
 export const expertiseData: ExpertiseItem[] = [
   {
