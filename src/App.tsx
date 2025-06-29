@@ -18,15 +18,22 @@ function App() {
   return (
     <>
       <Header
-        name="Vivek"
         links={links}
       />
       <div style={{ overflow: 'auto' }}>
-        <NameAndDescription/>
-        <Expertise />
-        <Projects />
+        <section id="about">
+          <NameAndDescription/>
+        </section>
+        <section id="expertise">
+          <Expertise />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
         <ExperienceSection />
-        <Contact />
+        <section id="contact">
+          <Contact />
+        </section>
         <Footer />
       </div>
     </>

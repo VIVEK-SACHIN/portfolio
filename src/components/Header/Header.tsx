@@ -3,7 +3,6 @@ import { nameAndDescriptionData } from '../../config/vivek';
 import './Header.css';
 
 interface HeaderProps {
-  name: string;
   links: {
     about: string;
     projects: string;
@@ -11,7 +10,14 @@ interface HeaderProps {
   };
 }
 
-export const Header: React.FC<HeaderProps> = ({ name, links }) => {
+const scrollToSection = (sectionId: string) => {
+  const element = document.getElementById(sectionId);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+  }
+};
+
+export const Header: React.FC<HeaderProps> = ({ links }) => {
   const [nameInitials, setNameInitials] = useState('');
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
@@ -27,16 +33,26 @@ export const Header: React.FC<HeaderProps> = ({ name, links }) => {
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, sectionId: string) => {
+    e.preventDefault();
+    scrollToSection(sectionId);
+  };
+
   return (
     <header className="header">
       <div className="header-content">
-        <span className="header-name">
+        <span 
+          className="header-name"
+          onClick={() => scrollToSection('about')}
+          style={{ cursor: 'pointer' }}
+        >
           {isMobile ? nameInitials : nameAndDescriptionData.name}
         </span>
         <nav className="header-nav">
-          <a href={links.about}>About</a>
-          <a href={links.projects}>Projects</a>
-          <a href={links.contact}>Contact</a>
+          <a href="#about" onClick={(e) => handleNavClick(e, 'expertise')}>About</a>
+          {/* <a href="#expertise" onClick={(e) => handleNavClick(e, 'about')}>Expertise</a> */}
+          <a href="#projects" onClick={(e) => handleNavClick(e, 'projects')}>Projects</a>
+          <a href="#contact" onClick={(e) => handleNavClick(e, 'contact')}>Contact</a>
         </nav>
       </div>
     </header>
