@@ -2,6 +2,7 @@ import React from 'react';
 import styles from './Contact.module.css';
 import { LucidePhone, LucideMail } from 'lucide-react';
 import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { nameAndDescriptionData } from '../../config/vivek';
 
 const Contact: React.FC = () => {
   return (
@@ -26,7 +27,7 @@ const Contact: React.FC = () => {
             </a>
             
             <a 
-              href="https://github.com/Aditya-system32" 
+              href={nameAndDescriptionData.githubUrl}
               target="_blank" 
               rel="noopener noreferrer"
               className={`${styles.linkCard} ${styles.cardHover}`}
@@ -39,7 +40,7 @@ const Contact: React.FC = () => {
             </a>
             
             <a 
-              href="https://www.linkedin.com/in/aditya-yadav-573b5b322/" 
+              href={nameAndDescriptionData.linkedinUrl} 
               target="_blank" 
               rel="noopener noreferrer"
               className={`${styles.linkCard} ${styles.cardHover}`}
