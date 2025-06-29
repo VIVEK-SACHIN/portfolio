@@ -68,9 +68,25 @@
 
 .buttons-container {
     display: flex;
-    gap: 0.75rem;
-    margin-top: 1rem;
+    gap: 1rem;
+    flex-wrap: wrap;
     justify-content: center;
+    margin: 2rem 0 4rem 0;
+}
+
+.scroll-down-indicator {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+}
+
+.scroll-down-indicator:hover {
+    opacity: 1;
 }
 
 .action-button {

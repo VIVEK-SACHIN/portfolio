@@ -87,6 +87,7 @@ export const nameAndDescriptionData: NameAndDescription = {
   githubUrl: 'https://github.com/VIVEK-SACHIN',
   cvUrl: 'https://github.com/VIVEK-SACHIN/PersonalData/blob/main/vivekresume2yrs.pdf',
   MyExpertise: `With over 2 years of experience in full-stack development, I've built and scaled applications across various domains. Here's what I bring to the table:`,
+  linkedinUrl: 'https://www.linkedin.com/in/vivek-kumar-a96a23207/'
 };
 
 export const expertiseData: ExpertiseItem[] = [

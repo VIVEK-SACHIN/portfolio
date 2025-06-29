@@ -95,6 +95,7 @@ export const nameAndDescriptionData: NameAndDescription = {
   githubUrl: 'https://github.com/Aditya-system32',
   cvUrl: 'https://github.com/Aditya-system32',
   MyExpertise: 'MERN Stack Developer | 2+ Years Experience',
+  linkedinUrl: 'https://www.linkedin.com/in/aditya-yadav-573b5b322/'
 };
 
 export const expertiseData: ExpertiseItem[] = [
