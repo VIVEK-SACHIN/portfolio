@@ -20,7 +20,7 @@ function App() {
       <Header
         links={links}
       />
-      <div style={{ overflow: 'auto' }}>
+      <main className="main-content">
         <section id="about">
           <NameAndDescription/>
         </section>
@@ -35,7 +35,7 @@ function App() {
           <Contact />
         </section>
         <Footer />
-      </div>
+      </main>
     </>
   )
 }
