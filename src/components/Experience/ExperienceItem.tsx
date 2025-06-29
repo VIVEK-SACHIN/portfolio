@@ -1,7 +1,7 @@
 import { type FC } from 'react';
 import styles from './ExperienceItem.module.css';
 import { LucideCalendar } from 'lucide-react';
-import type { TimelineItem } from '../../config/vivek';
+import type { TimelineItem } from '../../config/types/config.types';
 
 export interface ExperienceItemProps {
   item: TimelineItem;

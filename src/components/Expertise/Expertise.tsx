@@ -60,7 +60,7 @@ export const Expertise: React.FC = () => {
         <div className="additional-tech">
           <h3 className="additional-tech-title">Additional Technologies</h3>
           <div className="tech-tags-container">
-            {additionalTech.map((tech, index) => (
+            {additionalTech.map((tech) => (
               <div className="tech-tag" key={tech.text}>
                 <DynamicIcon name={tech.icon} />
                 <span>{tech.text}</span>

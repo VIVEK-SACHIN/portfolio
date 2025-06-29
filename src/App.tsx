@@ -9,17 +9,10 @@ import Footer from './components/footer/Footer';
 import ExperienceSection from './components/Experience/ExperienceSection';
 
 function App() {
-  const links = {
-    about: '#about',
-    projects: '#projects',
-    contact: '#contact'
-  };
 
   return (
     <>
-      <Header
-        links={links}
-      />
+      <Header/>
       <main className="main-content">
         <section id="about">
           <NameAndDescription/>
