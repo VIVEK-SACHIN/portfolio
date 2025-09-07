@@ -23,7 +23,7 @@ export interface NameAndDescription {
   githubUrl: string;
   cvUrl: string;
   MyExpertise: string;
-  linkedinUrl: string;
+  linkedinUrl?: string;
 }
 
 export interface TechItem {
